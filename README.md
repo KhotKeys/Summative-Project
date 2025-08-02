@@ -68,7 +68,7 @@ A short walkthrough video showcasing the platform’s functionality, API testing
 
 ```bash
 git clone https://github.com/KhotKeys/Summative-Project.git
-cd LMS-Backend
+cd Summative_API
 ```
 
 2. **Install Dependencies**
