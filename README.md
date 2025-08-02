@@ -8,10 +8,10 @@ A Node.js backend application for academic institutions to support faculty opera
 
 A short walkthrough video showcasing the platform’s functionality, API testing, and Redis notifications.
 
-**Watch on YouTube**: https://youtu.be/NY2bDVUtBdM
+**Watch on YouTube**:
 
 ## i18n Student Reflection Page
- Hosted Live: [https://reflection-page.netlify.app/](https://reflection-page.netlify.app/)
+ Hosted Live: [https://khotkeys.github.io/Summative-Project/]
 
  ---
 
