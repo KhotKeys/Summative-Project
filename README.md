@@ -8,7 +8,7 @@ A Node.js backend application for academic institutions to support faculty opera
 
 A short walkthrough video showcasing the platform’s functionality, API testing, and Redis notifications.
 
-**Watch on YouTube**:
+**Watch on YouTube**: https://youtu.be/1TloBRIeiuc
 
 ## i18n Student Reflection Page
  Hosted Live: [https://khotkeys.github.io/Summative-Project/]
@@ -67,7 +67,7 @@ A short walkthrough video showcasing the platform’s functionality, API testing
 1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/Lydia02/LMS-Backend.git
+git clone https://github.com/KhotKeys/Summative-Project.git
 cd LMS-Backend
 ```
 
@@ -151,26 +151,7 @@ node notification-system/notificationWorker.js
   - Only managers can assign courses
   - Only facilitators can submit logs
 
----
-
-## API Documentation
-
-API documentation is available via Postman.
-
-- **Download the Postman Collection**: Refer to the file included at [Course-Management-System](https://github.com/Lydia02/LMS-Backend/blob/master/Course%20Management%20system.postman_collection.json)
-- To import:
-  - Open Postman
-  - Click **Import** > **Upload Files**
-  - Select the collection JSON file provided
-
-This collection includes:
-- Auth flows
-- Course allocation operations
-- Facilitator activity submissions
-- Manager monitoring and filters
-- Notification simulation endpoints
-
----
+----
 
 ## i18n Student Reflection Page
 
@@ -180,7 +161,7 @@ This collection includes:
   - CSS styles in `styles.css`
 - Language Switcher: English ⇄ French
 - All content is dynamically rendered using a translation dictionary object
-- Hosted Live: [https://reflection-page.netlify.app/](https://reflection-page.netlify.app/)
+- Hosted Live: [https://reflection-page.github.app/](https://khotkeys.github.io/Summative-Project/))
 
 ---
 
@@ -238,8 +219,8 @@ POST /api/auth/manager/login
 Content-Type: application/json
 
 {
-  "email": "chinyere.okafor@alu.edu",
-  "password": "ManagerPass123"
+  "email": "kkhotmachuil@gmail.com",
+  "password": "AdminPass343"
 }
 ```
 
@@ -295,6 +276,6 @@ This project is for educational purposes only.
 
 ## Author
 
-**Lydia Ojoawo**  
-GitHub: [@Lydia02](https://github.com/Lydia02)
+**Gabriel Pawuoi**  
+GitHub: [@KhotKeys](https://github.com/KhotKeys)
 
