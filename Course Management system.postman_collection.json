@@ -1,0 +1,1713 @@
+{
+	"info": {
+		"_postman_id": "138d7e26-c165-4272-b892-37b5f82d5a88",
+		"name": "Course Management system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21934764"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "System Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@alu.edu\",\r\n  \"password\": \"AdminPass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/system-admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"system-admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Manager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"chinyere.okafor@alu.edu\",\r\n  \"name\": \"Chinyere Okafor\",\r\n  \"password\": \"ManagerPass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/manager/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"manager",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Manager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"chinyere.okafor@alu.edu\",\r\n  \"password\": \"ManagerPass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/manager/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"manager",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{system_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/approve/student/65ce640b-f695-4b52-af98-1de9e5215c51",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"approve",
+								"student",
+								"65ce640b-f695-4b52-af98-1de9e5215c51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Facilitator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ama.mensah@alu.edu\",\r\n  \"name\": \"Ama Mensah\",\r\n  \"password\": \"FacilitatorPass123\",\r\n  \"qualification\": \"Master's in Data Science\",\r\n  \"location\": \"Accra, Ghana\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/facilitator/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"facilitator",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Facilitator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ama.mensah@alu.edu\",\r\n  \"password\": \"FacilitatorPass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/facilitator/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"facilitator",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"olumide.adebayo@student.alu.edu\",\r\n  \"name\": \"Olumide Adebayo\",\r\n  \"password\": \"StudentPass123\",\r\n  \"studentID\": \"ALU2024001\",\r\n  \"phone\": \"+2348123456789\",\r\n  \"dateOfBirth\": \"2002-03-15\",\r\n  \"address\": \"15 Victoria Island, Lagos, Nigeria\",\r\n  \"academicYear\": 2,\r\n  \"emergencyContact\": \"Funmi Adebayo\",\r\n  \"emergencyPhone\": \"+2348987654321\",\r\n  \"nationality\": \"Nigerian\",\r\n  \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/student/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"student",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Student",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Management Data",
+			"item": [
+				{
+					"name": "Create Class",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{system_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"2023J\",\r\n  \"startDate\": \"2023-01-13\",\r\n  \"graduationDate\": \"2026-07-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/setup/classes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"setup",
+								"classes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE MODULE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{system_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Data Structures and Algorithms\",\r\n  \"half\": \"H2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/setup/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"setup",
+								"modules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Cohort",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{system_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"cohort2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cohorts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cohorts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Mode",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{system_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"In-person\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/setup/modes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"setup",
+								"modes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Get student Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/students/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"students",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Student Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"class\": \"2023M\",\r\n    \"cohortID\": \"1fdd0900-aa0b-4787-acda-503d2ec372b2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/students/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"students",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student Dashboard",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/students/dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"students",
+								"dashboard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manager",
+			"item": [
+				{
+					"name": "Create Allocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"moduleID\": \"414dded5-d2c4-4024-829f-2b4d09adca19\",\r\n  \"facilitatorID\": \"ad750259-d85e-4b41-b2bd-774df2fa8afa\",\r\n  \"cohortID\": \"5c681791-d2bc-4ba0-a048-2a8866e98ebe\",\r\n  \"classID\": \"1fdd0900-aa0b-4787-acda-503d2ec372b2\",\r\n  \"modeID\": \"1fb41dcf-f993-499f-9ccb-15354e5f5397\",\r\n  \"trimester\": 1,\r\n  \"year\": 2024\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/managers/allocations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"allocations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Allocations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"moduleID\": \"414dded5-d2c4-4024-829f-2b4d09adca19\",\r\n  \"facilitatorID\": \"ad750259-d85e-4b41-b2bd-774df2fa8afa\",\r\n  \"cohortID\": \"5c681791-d2bc-4ba0-a048-2a8866e98ebe\",\r\n  \"classID\": \"1fdd0900-aa0b-4787-acda-503d2ec372b2\",\r\n  \"modeID\": \"1fb41dcf-f993-499f-9ccb-15354e5f5397\",\r\n  \"trimester\": 1,\r\n  \"year\": 2024\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/managers/allocations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"allocations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Allocations by Trimester",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/allocations/filter/trimester/1/year/2024",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"allocations",
+								"filter",
+								"trimester",
+								"1",
+								"year",
+								"2024"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Allocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"trimester\": 2,\r\n  \"year\": 2024\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/managers/allocations/f5f8650b-cb18-4f7e-ae05-f2f2fcdbe96e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"allocations",
+								"f5f8650b-cb18-4f7e-ae05-f2f2fcdbe96e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Allocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"trimester\": 2,\r\n  \"year\": 2024\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/managers/allocations/f5f8650b-cb18-4f7e-ae05-f2f2fcdbe96e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"allocations",
+								"f5f8650b-cb18-4f7e-ae05-f2f2fcdbe96e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Allocations by Cohort",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/allocations/filter/cohort/5c681791-d2bc-4ba0-a048-2a8866e98ebe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"allocations",
+								"filter",
+								"cohort",
+								"5c681791-d2bc-4ba0-a048-2a8866e98ebe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Allocations by Intake",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/allocations/filter/intake/HT1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"allocations",
+								"filter",
+								"intake",
+								"HT1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Allocations by Facilitator",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/allocations/filter/facilitator/ad750259-d85e-4b41-b2bd-774df2fa8afa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"allocations",
+								"filter",
+								"facilitator",
+								"ad750259-d85e-4b41-b2bd-774df2fa8afa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Allocations by Mode",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/allocations/filter/mode/1fb41dcf-f993-499f-9ccb-15354e5f5397",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"allocations",
+								"filter",
+								"mode",
+								"1fb41dcf-f993-499f-9ccb-15354e5f5397"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Allocations with Pagination",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/allocations?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"allocations"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Allocations with Filters",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/allocations?trimester=1&year=2024",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"allocations"
+							],
+							"query": [
+								{
+									"key": "trimester",
+									"value": "1"
+								},
+								{
+									"key": "year",
+									"value": "2024"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Facilitator",
+			"item": [
+				{
+					"name": "Get Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/my-courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"my-courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Allocations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/allocations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"allocations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Allocation by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/allocations/19ee64bc-6c44-4ef6-a76b-3afb1a984f95",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"allocations",
+								"19ee64bc-6c44-4ef6-a76b-3afb1a984f95"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Allocations by Trimester",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/allocations/filter/trimester/1/year/2024",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"allocations",
+								"filter",
+								"trimester",
+								"1",
+								"year",
+								"2024"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Allocations by Mode",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/allocations/filter/mode/1fb41dcf-f993-499f-9ccb-15354e5f5397",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"allocations",
+								"filter",
+								"mode",
+								"1fb41dcf-f993-499f-9ccb-15354e5f5397"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  Allocations with Filters",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/allocations?trimester=1&year=2024",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"allocations"
+							],
+							"query": [
+								{
+									"key": "trimester",
+									"value": "1"
+								},
+								{
+									"key": "year",
+									"value": "2024"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses with Pagination",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/my-courses?page=1&limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"my-courses"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Facilitator Activity Tracker",
+			"item": [
+				{
+					"name": "Create my  Logs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"allocationId\": \"19ee64bc-6c44-4ef6-a76b-3afb1a984f95\",\r\n  \"weekNumber\": 3,\r\n  \"attendance\": [\"f145a8d7-2f42-4407-8adb-5d69cf37e740\", \"student2\", \"student3\"],\r\n  \"formativeOneGrading\": \"Done\",\r\n  \"formativeTwoGrading\": \"Pending\",\r\n  \"summativeGrading\": \"Not Started\",\r\n  \"courseModeration\": \"Done\",\r\n  \"intranetSync\": \"Pending\",\r\n  \"gradeBookStatus\": \"Not Started\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/activity-logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"activity-logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Activity logs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"allocationId\": \"19ee64bc-6c44-4ef6-a76b-3afb1a984f95\",\r\n  \"weekNumber\": 2,\r\n  \"attendance\": [\"student1\", \"student2\", \"student3\"],\r\n  \"formativeOneGrading\": \"Done\",\r\n  \"formativeTwoGrading\": \"Pending\",\r\n  \"summativeGrading\": \"Not Started\",\r\n  \"courseModeration\": \"Done\",\r\n  \"intranetSync\": \"Pending\",\r\n  \"gradeBookStatus\": \"Not Started\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/activity-logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"activity-logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Activity Log",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"formativeTwoGrading\": \"Done\",\r\n  \"summativeGrading\": \"Pending\",\r\n  \"comments\": \"Updated formative assessments completed, summative in progress\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/activity-logs/78726a6a-bc43-46b8-b83e-f9161269f21c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"activity-logs",
+								"78726a6a-bc43-46b8-b83e-f9161269f21c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET with Query Filter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/activity-logs?weekNumber=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"activity-logs"
+							],
+							"query": [
+								{
+									"key": "weekNumber",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Activity Log",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{facilitator_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"formativeTwoGrading\": \"Done\",\r\n  \"summativeGrading\": \"Pending\",\r\n  \"comments\": \"Updated formative assessments completed, summative in progress\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/facilitators/activity-logs/78726a6a-bc43-46b8-b83e-f9161269f21c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"facilitators",
+								"activity-logs",
+								"78726a6a-bc43-46b8-b83e-f9161269f21c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manager Activity Tracker",
+			"item": [
+				{
+					"name": "Get all activity log (manager)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/activity-logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"activity-logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Activity Log by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/activity-logs/eab0cb85-773d-4881-a1f5-305b18bbfd10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"activity-logs",
+								"eab0cb85-773d-4881-a1f5-305b18bbfd10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Logs by Facilitator",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/facilitator/ad750259-d85e-4b41-b2bd-774df2fa8afa/logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"facilitator",
+								"ad750259-d85e-4b41-b2bd-774df2fa8afa",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Logs by Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/course/19ee64bc-6c44-4ef6-a76b-3afb1a984f95/logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"course",
+								"19ee64bc-6c44-4ef6-a76b-3afb1a984f95",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Logs by Week",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/week/4/logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"week",
+								"4",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Compliance Summary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/compliance/week/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"compliance",
+								"week",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Logs by Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/status/formativeOneGrading/Pending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"status",
+								"formativeOneGrading",
+								"Pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Weekly Compliance Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/compliance/report/1/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"compliance",
+								"report",
+								"1",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Manual Reminders to Facilitator",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{manager-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/managers/reminders/send/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"managers",
+								"reminders",
+								"send",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "system_admin",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU0YWVjNDhkLTQxMjUtNDdlZC05YjdkLWRkNmEyYTQ0MzM2YSIsInJvbGUiOiJzeXN0ZW1fYWRtaW4iLCJlbWFpbCI6ImFkbWluQHN5c3RlbS5jb20iLCJpYXQiOjE3NTM2NDMxNDMsImV4cCI6MTc1MzcyOTU0M30.lard6lodTLNmKwJZBH3yhkbiSzCdlcSpBDCy2SeuhQI",
+			"type": "default"
+		},
+		{
+			"key": "manager-token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM5ZDFmYmFkLTIzNWEtNGVjNy1hY2ZmLWVmNzM5NGZhNWU4OCIsInJvbGUiOiJtYW5hZ2VyIiwiZW1haWwiOiJzLm9qb2F3b0BlbWFpbC5jb20iLCJpYXQiOjE3NTM2NDQ4OTMsImV4cCI6MTc1MzczMTI5M30.iB1WlfkammA5S_He8y9pSgIprgAfkXLtbYKrbJNCEqo",
+			"type": "default"
+		},
+		{
+			"key": "facilitator_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRhNzIxMjZiLTkyODMtNGRhYS1iNjVlLWVjMDViNWE1YzE1YyIsInJvbGUiOiJmYWNpbGl0YXRvciIsImVtYWlsIjoiZ3JhY2VAZW1haWwuY29tIiwiaWF0IjoxNzUzNjQ1NDA3LCJleHAiOjE3NTM3MzE4MDd9.JU60ZnDRwsm4pAGmxwbCw8VIn2exgSQT_MQ_m2bMpbs",
+			"type": "default"
+		},
+		{
+			"key": "student_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkzMTk2OGJjLWY3ODgtNDY0OS1iYmUwLTg5ZGNhZjhkNjViMiIsInJvbGUiOiJzdHVkZW50IiwiZW1haWwiOiJlbWVrYS5ud2FjaHVrd3VAYWx1LmVkdSIsInN0dWRlbnRJRCI6IkFMVTIwMjQwMDIiLCJpYXQiOjE3NTM2NDYzMTMsImV4cCI6MTc1MzczMjcxM30.l--rlTbK7QWVCyC69q_d7ET-Nk1MXCLQ5QRy9dGe-gg",
+			"type": "default"
+		}
+	]
+}

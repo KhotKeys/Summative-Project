@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="page.title">Course Reflection</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Language Switcher -->
+    <header class="header">
+      <div class="container">
+        <h1 data-i18n="header.title">Course Reflection Portal</h1>
+        <div class="language-switcher">
+          <label for="language-select" data-i18n="language.label"
+            >Language:</label
+          >
+          <select id="language-select" class="language-dropdown">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="rw">Kinyarwanda</option>
+            <option value="yo">Yorùbá</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+          <h2 data-i18n="welcome.title">Welcome to Your Reflection Journey</h2>
+          <p data-i18n="welcome.message">
+            Take a moment to reflect on your learning experience. Your thoughts
+            and insights are valuable for both your personal growth and course
+            improvement.
+          </p>
+        </section>
+
+        <!-- Reflection Form -->
+        <section class="reflection-section">
+          <form id="reflection-form" class="reflection-form">
+            <!-- Question 1 -->
+            <div class="question-block">
+              <label for="question1" class="question-label">
+                <span class="question-number">1.</span>
+                <span data-i18n="questions.question1"
+                  >What did you enjoy most about the course?</span
+                >
+              </label>
+              <textarea
+                id="question1"
+                name="question1"
+                class="answer-textarea"
+                data-i18n-placeholder="placeholders.question1"
+                placeholder="Share what you found most engaging and enjoyable..."
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-block">
+              <label for="question2" class="question-label">
+                <span class="question-number">2.</span>
+                <span data-i18n="questions.question2"
+                  >What was the most challenging part of the course?</span
+                >
+              </label>
+              <textarea
+                id="question2"
+                name="question2"
+                class="answer-textarea"
+                data-i18n-placeholder="placeholders.question2"
+                placeholder="Describe the difficulties you encountered and how you overcame them..."
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-block">
+              <label for="question3" class="question-label">
+                <span class="question-number">3.</span>
+                <span data-i18n="questions.question3"
+                  >What improvements would you suggest for future
+                  iterations?</span
+                >
+              </label>
+              <textarea
+                id="question3"
+                name="question3"
+                class="answer-textarea"
+                data-i18n-placeholder="placeholders.question3"
+                placeholder="Share your suggestions for making the course even better..."
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="additional-info">
+              <h3 data-i18n="additional.title">
+                Additional Information (Optional)
+              </h3>
+              <textarea
+                id="additional-thoughts"
+                name="additional"
+                class="answer-textarea"
+                data-i18n-placeholder="placeholders.additional"
+                placeholder="Any other thoughts, suggestions, or comments you'd like to share..."
+                rows="3"
+              ></textarea>
+            </div>
+
+            <!-- Submit Section -->
+            <div class="submit-section">
+              <button
+                type="submit"
+                class="submit-button"
+                data-i18n="buttons.submit"
+              >
+                Submit Reflection
+              </button>
+              <button
+                type="button"
+                id="save-draft"
+                class="draft-button"
+                data-i18n="buttons.saveDraft"
+              >
+                Save as Draft
+              </button>
+              <button
+                type="button"
+                id="clear-form"
+                class="clear-button"
+                data-i18n="buttons.clear"
+              >
+                Clear Form
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Response Display -->
+        <section
+          id="response-display"
+          class="response-display"
+          style="display: none"
+        >
+          <h3 data-i18n="response.title">Thank You for Your Reflection!</h3>
+          <p data-i18n="response.message">
+            Your responses have been saved locally. You can review or edit them
+            anytime before final submission.
+          </p>
+          <button
+            id="edit-responses"
+            class="edit-button"
+            data-i18n="buttons.edit"
+          >
+            Edit Responses
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p data-i18n="footer.text">
+          © 2025 ALU Course Tracker. All rights reserved.
+        </p>
+        <p class="current-language">
+          <span data-i18n="footer.currentLanguage">Current Language:</span>
+          <span id="current-lang-display">English</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/translations.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
